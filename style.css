@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Changed to white background */
+    color: black; /* Default text color */
+}
+
+.full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Ensure full screen is also white */
+    z-index: 1;
+}
+
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2rem;
+    z-index: 2;
+    animation: fadeIn 0.5s ease; /* Add fade-in effect */
+}
+
+.hidden {
+    display: none;
+}
+
+.nature-scene {
+    position: relative;
+    height: 100vh;
+    background-image: url('path/to/nature-background.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+}
+
+.firecracker {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: explode 1s forwards;
+}
+
+@keyframes explode {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(-50px); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-100px); }
+}
+
+.cutting {
+    animation: cut 1s forwards;
+}
+
+@keyframes cut {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    50% { transform: translate(-50%, -50%) rotate(20deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.heartbeat {
+    animation: heartbeat 1s infinite;
+}
+
+/* Colorful Text */
+#message {
+    color: #FF69B4; /* Hot pink for a cheerful feel */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow effect to make it pop */
+}
+
+/* Adding colorful animation */
+@keyframes colorful {
+    0% { color: #FF69B4; } /* Hot pink */
+    25% { color: #1E90FF; } /* Dodger blue */
+    50% { color: #32CD32; } /* Lime green */
+    75% { color: #FFD700; } /* Gold */
+    100% { color: #FF69B4; } /* Back to hot pink */
+}
+
+#message {
+    animation: colorful 5s infinite; /* Color change animation */
+}
